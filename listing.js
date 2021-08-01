@@ -142,6 +142,14 @@ var apps = [
         "manifest": "manifests/wikipedia.cdapp",
         "description": "A wikipedia app to increase your knowledge",
         "hdpiIconAvailable": true
+    },
+    {
+        "name": "JSGameBoy",
+        "author": "floflispull",
+        "icon": "http://floflispull.github.io/JSGameBoy/images/128.png",
+        "manifest": "http://floflispull.github.io/JSGameBoy/jsgameboy.cdapp",
+        "description": "GameBoy Online GAMEBOY Emulator",
+        "hdpiIconAvailable": true
     }
 ];
 var widgets = [
