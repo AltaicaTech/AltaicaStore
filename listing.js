@@ -150,6 +150,14 @@ var apps = [
         "manifest": "http://floflispull.github.io/JSGameBoy/jsgameboy.cdapp",
         "description": "GameBoy Online GAMEBOY Emulator",
         "hdpiIconAvailable": false
+    },
+    {
+        "name": "2048",
+        "author": "floflispull",
+        "icon": "http://floflispull.github.io/2048/meta/apple-touch-icon.png",
+        "manifest": "http://floflispull.github.io/2048/2048.cdapp",
+        "description": "Famous game from the 2014 year. A small clone of 1024, based on Saming's 2048 (also a clone).",
+        "hdpiIconAvailable": false
     }
 ];
 var widgets = [
