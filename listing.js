@@ -149,7 +149,7 @@ var apps = [
         "icon": "http://floflispull.github.io/JSGameBoy/images/128.png",
         "manifest": "http://floflispull.github.io/JSGameBoy/jsgameboy.cdapp",
         "description": "GameBoy Online GAMEBOY Emulator",
-        "hdpiIconAvailable": true
+        "hdpiIconAvailable": false
     }
 ];
 var widgets = [
