@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Store</title>
+	<link href="../../css/framework.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="../../js/jquery.package.js"></script>
+	<script src="listing.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+<ul id="tabs" class="tabs header">
+	<li><a href="index.html#apps">Apps</a></li>
+	<li><a href="index.html#widgets">Widgets</a></li>
+	<li><a href="index.html#installed">Manage</a></li>
+	<input type="search" id="storesearch" placeholder="Search the store">
+</ul>
+<div id="apps"></div>
+<div id="widgets"></div>
+<div id="installed">
+	<ul id="manage_tabs">
+		<li><a href="index.html#installedapps">Apps</a></li>
+		<li><a href="index.html#installedwidgets">Widgets</a></li>
+		<li><a href="index.html#social">Social Providers</a></li>
+	</ul>
+	<div id="installedapps">
+		<h3>Your apps</h3>
+		<ul class="list"></ul>
+	</div>
+	<div id="installedwidgets">
+		<h3>Your widgets</h3>
+		<ul class="list"></ul>
+	</div>
+	<div id="social">
+		<h3>Your social providers</h3>
+		<ul class="list"></ul>
+	</div>
+</div>
+</body>
+</html>

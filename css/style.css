@@ -1,0 +1,149 @@
+body {
+	margin:0;
+	padding:0;
+	background-color:#F9F9F9;
+}
+.button {margin-right:5px;}
+h3 {font-weight:normal;font-size:18px;}
+#tabs {position:relative;height: 40px;line-height: 25px;}
+#tabs li a {
+  font-size: 15px;
+}
+#storesearch:not(:focus)::-webkit-input-placeholder {color:transparent;}
+#storesearch {
+  -webkit-appearance:none;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  float:right;
+  vertical-align:top;
+  height:100%;
+  width:40px;
+  margin:0;
+  color:transparent;
+  font-family:inherit;
+  font-size:10pt;
+  border:1px solid transparent;
+  border-left-color:#EBEBEB;
+  transition:all 0.3s;
+  background-image:url(../img/search.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-color:transparent;
+  padding:5px;
+  vertical-align: top;
+}
+#storesearch:focus {background-color:#FFF;width:170px;max-width:calc(100% - 250px);color:black;background-position:7px center;padding-left:30px;}
+#storesearch::-webkit-search-cancel-button {
+  display:none;
+}
+#storesearch:focus::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: url("../img/search-clear.png") transparent no-repeat 50% 50%;
+  margin: 0;
+  display:block
+}
+#storesearch::-ms-clear {
+    display:none;
+}
+#storesearch:focus::-ms-clear {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: url("../img/search-clear.png") transparent no-repeat 50% 50%;
+  margin: 0;
+  color:transparent;
+  display:block;
+}
+#tabs li {display:inline-block;margin:0 5px;-moz-box-sizing:border-box;box-sizing:border-box}
+#tabs li a {padding:5px;display:inline-block;text-decoration:none;}
+.view {overflow:hidden;vertical-align:top;text-align: start;font-size:10pt;display:inline-block;background-color: #FFF;width:150px;height:115px;margin: 0;padding:5px;}
+.view_front {transition:all 0.3s 0.1s;height:115px;}
+.view_name {font-weight:bold;}
+.view_author {display:block;white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.view_icon {width:64px;height:64px;display:block;margin:0 auto;margin-bottom:15px;}
+.view_desc {font-size:8pt;text-align:justify;}
+.view:hover .view_front{margin-top:-75px;}
+.view_install.g-button {padding:3px;min-width:0;height:auto;}
+.view_install.installed {font-size:0;}
+#apps .view_install.installed:before {content:"Launch";font-size:11px;vertical-align:middle;}
+#widgets .view_install.installed:before {content:"Remove";font-size:11px;vertical-align:middle;}
+#apps, #widgets {
+  text-align: center;
+}
+#apps, #widgets, #installed {position:relative;}
+#installedapps , #installedwidgets,#social {margin:0;padding:5px;font-size:11pt;}
+#installed ul {margin:0;padding:0;}
+#installedapps li , #installedwidgets li, #social li {list-style:none;padding:5px;margin:5px;height: 20px;line-height: 20px;border-radius:3px;}
+#installedapps li .buttons , #installedwidgets li .buttons, #social li .buttons {float:right;}
+#installedapps ul:empty:after {
+content:"You have no new apps. Why don't you get some ?";
+font-size:10pt;
+}
+#installedapps ul:empty {margin:10px;}
+#installedwidgets ul:empty:after {
+content:"You have no widgets. Why don't you install one ?";
+font-size:10pt;
+}
+#installedwidgets ul:empty {margin:10px;}
+#social ul:empty:after {
+content:"You have no social providers. Social providers are provided by apps and allow you to easily share data between apps.";
+font-size:10pt;
+}
+#social ul:empty {margin:10px;}
+#manage_tabs {
+margin:0;
+padding:0;
+list-style:none;
+border-bottom:1px solid #E9E9E9;
+}
+#manage_tabs li:first-child {margin-left:4px;}
+#manage_tabs li{margin:0;display:inline-block;margin-right:10px;font-size:15px;line-height: 20px;}
+#manage_tabs li a {padding:5px;display:inline-block;color:black;font:inherit;text-decoration:none;border-bottom:2px solid transparent;}
+#manage_tabs li.ui-state-active a{color:#3498DB;font-weight:600;}
+li .indicator {background-position:center;box-shadow:none;position:relative;background-repeat:no-repeat;width:16px;height:16px;vertical-align:middle;display:inline-block;margin-right:10px;opacity:0.65;}
+li .indicator:hover {opacity:1;}
+li .indicator:hover:after {
+top:100%;
+margin-top:4px;
+z-index:999;
+position:absolute;
+background-color:#333;
+box-shadow:0px 1px 2px rgba(0,0,0,0.3);
+padding:7px;
+left:0;
+border-radius:3px;
+font-family:Roboto,sans-serif;
+color:#FFF;
+font-weight:bold;
+font-size:10pt;
+}
+li .share.indicator:hover:after {content:"Share";}
+li .sidebar.indicator:hover:after {content:"Sidebar";}
+.share.indicator {background-image:url(../img/share-indicator.png);}
+.sidebar.indicator {background-image:url(../img/sidebar-indicator.png)}
+#installed h3 {
+    color:#777;
+	font-size: 16px;
+	margin-left:8px;
+}
+@media (max-width:400px) {
+  .view {
+   width:135px;
+  }
+}
+@media (max-width: 310px) {
+  #tabs li a {
+    font-size: 10pt;
+  }
+  .view {
+    width: 100px;
+  }
+}
+@media (max-width: 235px) {
+  #tabs li a {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
