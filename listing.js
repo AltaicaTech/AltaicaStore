@@ -182,6 +182,14 @@ var apps = [
         "manifest": "https://floflispull.github.io/IodineGBA/iodinegba.cdapp",
         "description": "JavaScript GameBoy Advance emulator.",
         "hdpiIconAvailable": false
+    },
+    {
+        "name": "KeeWeb",
+        "author": "floflispull",
+        "icon": "https://keeweb.mirroring.eth.link/icons/android-chrome-192x192.png",
+        "manifest": "https://keeweb.mirroring.eth.link/keeweb.cdapp",
+        "description": "Free cross-platform password manager compatible with KeePass",
+        "hdpiIconAvailable": false
     }
 ];
 var widgets = [
