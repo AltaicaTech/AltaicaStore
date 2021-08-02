@@ -166,6 +166,14 @@ var apps = [
         "manifest": "https://plasmmer.github.io/aragon/src/aragon.cdapp",
         "description": "Create and manage decentralized organizations (DAOs) on Ethereum.",
         "vectorIconAvailable": true
+    },
+    {
+        "name": "dtube",
+        "author": "floflispull",
+        "icon": "https://about.d.tube/img/kit/Logo_Black_D.svg",
+        "manifest": "https://ipfs.io/ipfs/bafybeidhaeqaixajoovmslrolt4vgrloi4hkbq3xdztvaxi2wzqdg5x64y/dtube.cdapp",
+        "description": "📺 [D]ecentralized, full-featured video sharing website.",
+        "vectorIconAvailable": true
     }
 ];
 var widgets = [
