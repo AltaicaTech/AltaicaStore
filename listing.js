@@ -174,6 +174,14 @@ var apps = [
         "manifest": "https://ipfs.io/ipfs/bafybeidhaeqaixajoovmslrolt4vgrloi4hkbq3xdztvaxi2wzqdg5x64y/dtube.cdapp",
         "description": "📺 [D]ecentralized, full-featured video sharing website.",
         "vectorIconAvailable": true
+    },
+    {
+        "name": "IodineGBA",
+        "author": "floflispull",
+        "icon": "https://cdn.shopify.com/s/files/1/2646/0510/files/unnamed_300x300.png?v=1513897660",
+        "manifest": "https://floflispull.github.io/IodineGBA/iodinegba.cdapp",
+        "description": "JavaScript GameBoy Advance emulator.",
+        "hdpiIconAvailable": false
     }
 ];
 var widgets = [
