@@ -147,7 +147,7 @@ var apps = [
         "name": "JSGameBoy",
         "author": "floflispull",
         "icon": "http://floflispull.github.io/JSGameBoy/images/128.png",
-        "manifest": "http://floflispull.github.io/JSGameBoy/jsgameboy.cdapp",
+        "manifest": "http://floflispull.github.io/JSGameBoy/manifest.webapp",
         "description": "GameBoy Online GAMEBOY Emulator",
         "hdpiIconAvailable": false
     },
