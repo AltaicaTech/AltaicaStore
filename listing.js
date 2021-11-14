@@ -192,6 +192,16 @@ var apps = [
         "hdpiIconAvailable": false
     }
 ];
+var games = [
+    {
+        "name": "Runny Car",
+        "author": "gamlr",
+        "icon": "/home/daniell/Desktop/runnycar/icon-256.png",
+        "manifest": "/home/daniell/Desktop/runnycar/runnycar.cdapp",
+        "description": "Test",
+        "hdpiIconAvailable": false
+    }
+];
 var widgets = [
     {
         "name": "Battery",

@@ -32,6 +32,27 @@ $(function() {
 		}
 		$("#apps").append(view);
 	});
+	$.each(games, function(i,v) {
+		var id = "games_" + v.name.toLowerCase().replace(".","").replace(",","").replace(" ","");
+		var view = $("<div>").attr("class","view card");
+
+		var front = $("<div>").addClass("view_front").appendTo(view);
+		var icon = $("<img>").attr("src",v.icon).addClass("view_icon").appendTo(front);
+		$("<span>").attr("class","view_name").html(v.name).appendTo(front);
+		$("<span>").attr("class","view_author").html("by "+v.author).appendTo(front);
+		var back = $("<div>").addClass("view_back").appendTo(view);
+
+		$("<p>").addClass("view_desc").html(v.description).appendTo(back);
+
+		$("<button>").attr({"class":"view_install button blue small","data-url":v.manifest,"data-id":id}).html("<span>Install</span>").appendTo(back);
+		if(v.hdpiIconAvailable) {
+
+			var srcsetval = v.icon + " 1x, " + v.icon.substring(0,v.icon.length - 4) + "@2x.png 2x";
+			icon.attr("srcset",srcsetval);
+
+		}
+		$("#games").append(view);
+	});
 	$.each(widgets, function(i,v) {
 		var id = "widget_" + v.name.toLowerCase().replace(".","").replace(",","").replace(" ","");
 		var result = '<div class="view card">'+
@@ -63,6 +84,27 @@ $(function() {
 				$("<span>").attr("class","title").html(data).appendTo(li);
 				li.append("<span class='buttons'><button class='button green small button_launch'>Launch</button></span></li>");
 				$("#installedapps ul").append(li);
+			});
+		}
+	});
+	$(document).on("game-change", function(e) {
+		$("#games .view_install").each(function() {
+			var id = $(this).attr("data-id");
+			if(parent.apps.check(id,"installed")) {
+				$(this).addClass("installed green").removeClass("blue");
+			}
+			else {
+				$(this).addClass("blue").removeClass("installed green");
+			}
+		});
+		$("#installedgames ul").empty();
+		if(parent.games.list("custom","name").length) {
+			$.each(parent.games.list("custom","name"), function(i,data) {
+				var id = "games_" + data.toLowerCase().replace(".","").replace(",","").replace(" ","");
+				var li = $("<li>").attr("data-id",id).addClass("card");
+				$("<span>").attr("class","title").html(data).appendTo(li);
+				li.append("<span class='buttons'><button class='button green small button_launch'>Launch</button></span></li>");
+				$("#installedgames ul").append(li);
 			});
 		}
 	});
@@ -105,15 +147,21 @@ $(function() {
 			});
 		}
 	});
-	$(document).trigger("app-change").trigger("widget-change").trigger("social-change");
+	$(document).trigger("app-change").trigger("game-change").trigger("widget-change").trigger("social-change");
 	$(document).on("click","#apps .view_install:not(.installed)",function() {
 		parent.apps.install($(this).attr("data-url"));
+	});
+	$(document).on("click","#games .view_install:not(.installed)",function() {
+		parent.games.install($(this).attr("data-url"));
 	});
 	$(document).on("click","#widgets .view_install:not(.installed)",function() {
 		parent.widgets.install($(this).attr("data-url"), $(this).parent().siblings(".view_front").children(".view_name").html())
 	});
 	$(document).on("click","#apps .view_install.installed",function() {
 		parent.apps.open($(this).attr("data-id"));
+	});
+	$(document).on("click","#games .view_install.installed",function() {
+		parent.games.open($(this).attr("data-id"));
 	});
 	$(document).on("click","#widgets .view_install.installed",function() {
 		parent.widgets.remove($(this).attr("data-id"));
@@ -126,6 +174,9 @@ $(function() {
 	});
 	$(document).on("click","#installedapps li .buttons .button_launch",function() {
 		parent.apps.open($(this).parent().parent().attr("data-id"));
+	});
+	$(document).on("click","#installedgames li .buttons .button_launch",function() {
+		parent.games.open($(this).parent().parent().attr("data-id"));
 	});
 	$(document).on("click","#social .button_uninstall",function() {
 		parent.social.unregister($(this).parent().parent().attr("data-id"));
